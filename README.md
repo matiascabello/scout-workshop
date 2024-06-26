@@ -1,5 +1,11 @@
 # Scout Workshop
 
+![https://img.shields.io/badge/license-MIT-green](https://img.shields.io/badge/license-MIT-green)
+
+<p align="center">
+  <img src="scout_workshop_banner.png" alt="Scout in a Dark Forest" center  />
+</p>
+
 Welcome to the Scout Workshop repository! This repository contains all the necessary materials for our workshop on using Scout, CoinFabrik's bug detection tool for Soroban smart contracts. 
 
 Below you'll find a summary of the workshop agenda, installation guides, and examples we will work with during the sessions.
