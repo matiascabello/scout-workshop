@@ -2,10 +2,10 @@
 use soroban_sdk::{contract, contractimpl};
 
 #[contract]
-pub struct DivideBeforeMultiply;
+pub struct MyStruct;
 
 #[contractimpl]
-impl DivideBeforeMultiply {
+impl MyStruct {
     pub fn split_profit(percentage: u64, total_profit: u64) -> u64 {
         (percentage / 100) * total_profit
     }
@@ -13,11 +13,11 @@ impl DivideBeforeMultiply {
 
 #[cfg(test)]
 mod tests {
-    use crate::DivideBeforeMultiply;
+    use crate::MyStruct;
 
     #[test]
     fn split_profit_works() {
-        let result = DivideBeforeMultiply::split_profit(33, 100);
+        let result = MyStruct::split_profit(33, 100);
         assert_eq!(result, 0);
     }
 }
