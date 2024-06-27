@@ -29,9 +29,9 @@ For more details, please visit the [Workshop Landing Page](https://www.coinfabri
 
 ## Workshop Notes
 
-### Installation Notes
+### Installation
 
-### Excecution Notes
+### Excecution
 
 ### Output Interpretation
 
