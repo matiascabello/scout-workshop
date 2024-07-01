@@ -9,7 +9,6 @@ use soroban_sdk::{
 #[derive(Copy, Clone, Debug, Eq, PartialEq, PartialOrd, Ord)]
 #[repr(u32)]
 pub enum URError {
-    // Unexpected Revert Error
     AccountAlreadyVoted = 1,
     CandidateAlreadyAdded = 2,
     CandidateDoesntExist = 3,
@@ -33,17 +32,17 @@ pub struct State {
 const STATE: Symbol = symbol_short!("STATE");
 
 #[contract]
-pub struct UnexpectedRevert;
+pub struct MyStruct;
 
 #[contractimpl]
-impl UnexpectedRevert {
+impl MyStruct {
     pub fn init(env: Env, end_timestamp: u64) -> Result<State, URError> {
         if end_timestamp <= env.ledger().timestamp() {
             return Err(URError::TimestampBeforeCurrentBlock);
         }
 
         let zero_string: String = String::from_str(&env, "00000000000000000000000000000000");
-        let zero_addr = Address::from_string(&zero_string); //CHECK
+        let zero_addr = Address::from_string(&zero_string);
         let state = State {
             total_votes: 0,
             most_voted_candidate: zero_addr,
