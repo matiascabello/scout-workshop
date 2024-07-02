@@ -15,10 +15,10 @@ Below you'll find a summary of the workshop agenda, installation guides, and exa
 The agenda for the workshop is as follows:
 
 1. **Intro and Tool Installation**
-   - Overview of Scout
-   - Key features and benefits
    - Installing the CLI
    - Installing the VSCode Extension
+   - Overview of Scout
+   - Key features and benefits
 3. **Scout execution**
 4. **Output interpretation**
 5. **Practical examples: using Scout to solve an issue**
