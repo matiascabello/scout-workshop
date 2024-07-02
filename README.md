@@ -85,7 +85,13 @@ To run Scout on your project, navigate to the directory of your smart contract a
 
 ```bash
 cargo scout-audit
-```
+``` 
+
+Generate an HTML report with:
+
+```bash
+cargo scout-audit --output-format html
+``` 
 
 :warning: Currently Scout doesn't offer full support for workspaces. If you have a workspace, run Scout in each member instead of running it in the workspace `Cargo.toml`.
 
@@ -133,7 +139,33 @@ Take a look at `example-1` and `example-2`. Let's run scout on these examples an
 
 ### Scout Action: CI/CD Example
 
+Add Scout to every push to your repository with [Scout Action](https://github.com/CoinFabrik/scout-actions).
 
+Identify the path to the smart contract you want to be analyzed and create a `.yml` file in `.github/workflows` like `scout.yml` below.
 
+```yml
+name: scout-workflow
+on: [push]
 
+jobs:
+  nuevo-test:
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+      contents: write
+      repository-projects: write
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+
+      - name: do scout
+        uses: coinfabrik/scout-actions@v2.4
+        with:
+          target: 'path_to_smart_contract/'
+          markdown_output: "true"
+
+      - uses: mshick/add-pr-comment@v2.8.2
+        with:
+          message-path:  ${{ github.workspace }}/report.md
+```
 
