@@ -109,11 +109,31 @@ cargo scout-audit
 
 ### Output Interpretation
 
+Scout's output follows the following format.
 
+```console
+warning: [Short description of the issue]
+  --> src/lib.rs:[issue_line_start]:[issue_char_start]
+   |
+   |         some code;
+   |         ^^^^^^^^^^^^^^^^^^
+   |
+   = help: [Recommendation on how to remediate the issue]
+   = note: `#[warn([detector_name])]` on by default
+```
+
+Here:
+- `warning` provides a short description of the detected issue.
+- `help` provides a recommendation on how to fix the issue.
+- `note` indicates the detector triggered, which is turned on by default on the user profile. Check on [profile configuration](https://coinfabrik.github.io/scout-soroban/docs/intro#profile-configuration) to include or exclude detectors from your analysis.
 
 ### Practical Example
 
-### CI/CD Example
+Take a look at `example-1` and `example-2`. Let's run scout on these examples and see how to use the CLI and VSCode Extension.
+
+### Scout Action: CI/CD Example
+
+
 
 
 
