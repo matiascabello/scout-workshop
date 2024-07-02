@@ -21,9 +21,8 @@ The agenda for the workshop is as follows:
    - Installing the VSCode Extension
 3. **Scout execution**
 4. **Output interpretation**
-5. **Practical example: using Scout to solve an issue**
+5. **Practical examples: using Scout to solve an issue**
 6. **CI/CD Integration: adding Scout to your GitHub pipeline**
-7. **VS Code Extension: adding Scout to your development environment**
 
 For more details, please visit the [Workshop Landing Page](https://www.coinfabrik.com/scout-workshops/).
 
@@ -133,7 +132,7 @@ Here:
 - `help` provides a recommendation on how to fix the issue.
 - `note` indicates the detector triggered, which is turned on by default on the user profile. Check on [profile configuration](https://coinfabrik.github.io/scout-soroban/docs/intro#profile-configuration) to include or exclude detectors from your analysis.
 
-### Practical Example
+### Practical Examples
 
 Take a look at `example-1` and `example-2`. Let's run scout on these examples and see how to use the CLI and VSCode Extension.
 
