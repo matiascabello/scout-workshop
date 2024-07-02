@@ -31,9 +31,85 @@ For more details, please visit the [Workshop Landing Page](https://www.coinfabri
 
 ### Installation
 
+#### CLI
+
+Make sure that [Cargo](https://doc.rust-lang.org/cargo/getting-started/installation.html) is installed on your computer. Then, follow these 5 simple steps:
+
+**1. Install Rust Nightly Toolchain:**
+
+```bash
+rustup toolchain install nightly-2023-12-16
+```
+
+**2. Set Default Nightly Toolchain:**
+
+```bash
+rustup default nightly-2023-12-16
+```
+
+**3. Add rust-src Component:**
+
+```bash
+rustup component add rust-src --toolchain nightly-2023-12-16
+```
+
+**4. Install additional tools required by Scout:**
+
+```bash
+cargo install cargo-dylint dylint-link mdbook
+```
+
+**5. Install Scout Audit:**
+
+```bash
+cargo install cargo-scout-audit
+```
+
+For more information on installation and usage, please refer to the [Getting Started](https://coinfabrik.github.io/scout-soroban/docs/intro) section in our documentation section below.
+
+#### VSCode Extension
+
+Add Scout to your development workspace with Scout's VS Code extension to run Scout automatically upon saving your file.
+
+:bulb: Before installing Scout VS Code Extension, make sure to install [rust-analyzer](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer) and Scout CLI.
+
+:point_right: Install Scout VS Code from [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=CoinFabrik.scout-audit).
+
+:bulb: Tip: To see the errors highlighted in your code, we recommend installing the [Error Lens Extension](https://marketplace.visualstudio.com/items?itemName=usernamehw.errorlens).
+
 ### Excecution
 
+#### CLI
+
+To run Scout on your project, navigate to the directory of your smart contract and execute the following command:
+
+```bash
+cargo scout-audit
+```
+
+:warning: Currently Scout doesn't offer full support for workspaces. If you have a workspace, run Scout in each member instead of running it in the workspace `Cargo.toml`.
+
+```
+├── your-soroban-project
+│   ├── your-smart-contract
+│   │   ├── // Run Scout here.
+│   │   ├── src
+│   │   |   ├── contract.rs 
+│   ├── Cargo.lock
+│   ├── Cargo.toml
+│   ├── README.md
+
+```
+:warning: Make sure that your smart contracts compile properly. Scout won't run if any compilation errors exist.
+
+#### VSCode Extension
+
+:warning: To ensure the extension runs properly, make sure that you open the directory containing your smart contract, rather than the entire project. For example, if your smart contracts are located in `myproject/contracts`, and you want to work on the `token` contract while using the Scout VS Code Extension, open `myproject/contracts/token`.
+
+
 ### Output Interpretation
+
+
 
 ### Practical Example
 
