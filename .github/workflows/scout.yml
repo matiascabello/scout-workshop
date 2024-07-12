@@ -13,7 +13,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: do scout
-        uses: coinfabrik/scout-actions@v2.4
+        uses: coinfabrik/scout-actions@test-v0212
         with:
           target: 'examples/example-1/'
           markdown_output: "true"
